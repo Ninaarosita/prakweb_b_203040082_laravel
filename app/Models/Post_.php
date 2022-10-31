@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-
 class Post 
 {
     private static $blog_posts = [
@@ -16,13 +15,10 @@ class Post
             "body" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem incidunt accusantium debitis distinctio, repellat praesentium sed, reprehenderit, maiores ab ullam saepe similique. Iusto totam explicabo dolor ducimus exercitationem, eaque fugiat placeat maiores animi voluptatum rem ab doloremque aliquam porro hic voluptas minima doloribus nisi soluta nulla. Nemo laborum similique molestiae nostrum ab placeat sed sequi tempora, eos, atque officiis corrupti minus modi vel voluptas qui quasi, a esse aut corporis incidunt quam rerum voluptate. Architecto delectus, perferendis odio voluptas voluptates repellendus amet eaque doloremque nulla laboriosam, tempore perspiciatis doloribus hic? Error numquam eum veniam hic illo quidem qui dolor quo!"
         ],
     ];
-
-
     public static function all ()
     {
         return collect(self::$blog_posts);
     }
-
     public static function find($slug)
     {
         $posts = static::all();
