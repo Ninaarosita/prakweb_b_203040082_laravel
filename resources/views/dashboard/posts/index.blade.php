@@ -6,30 +6,31 @@
 </div>
 
 <div class="table-responsive col-lg-8">
-    <table class="table table-striped table-sm">
-        <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Title</th>
-              <th scope="col">Category</th>
-              <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($posts as $post)
-            <tr>
-              <td>{{ $loop->iteration }}</td>
-              <td>{{ $post->title }}</td>
-              <td>{{ $post->category->naame }}</td>
-              <td>
-                <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info"><span data-feather="eye" class="align-text-bottom"></span></a>
-                <a href="" class="badge bg-warning"><span data-feather="edit" class="align-text-bottom"></span></a>
-                <a href="" class="badge bg-danger"><span data-feather="x-circle" class="align-text-bottom"></span></a>
-              </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+  <a href="/dashboard/posts/create" class= "btn btn-primary mb-3">create new post</a>
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($posts as $post)
+        <tr>
+          <td>{{ $loop->iteration }}</td>
+          <td>{{ $post->title }}</td>
+          <td>{{ $post->category->name }}</td>
+          <td>
+            <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info"><span data-feather="eye" class="align-text-bottom"></span></a>
+            <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-warning"><span data-feather="edit" class="align-text-bottom"></span></a>
+            <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-danger"><span data-feather="x-circle" class="align-text-bottom"></span></a>
+          </td>
+        </tr>
+      @endforeach
+    </tbody>
+  </table>
 </div>
 
 @endsection
